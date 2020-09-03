@@ -80,4 +80,5 @@ with open(TEXT_FILE, "w+") as file:\n
     file.write(f"OTooley: {otooley_percent}  {otooley_votes}")
     file.write("----------------------------------------------")
     file.write(f"Winner: {winner}")
+file.close
     

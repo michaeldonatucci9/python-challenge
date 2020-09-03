@@ -1,0 +1,31 @@
+# # print the Results
+# print("Profit Loss Margin Analysis")
+# print("
+#       ")                                   
+# print(len(total_months))
+# print(sum(net_profit_losses))
+# print(average_change)
+# # show month/year and total
+# print("greatest_increase_in_profit:" str(total_months[average_change.index(max(average_change))+1]) + " " + "$" + str(greatest_increase_in_profit))
+# # show month/year and total
+# print("greatest_decrease_in_profit:" str(total_months[average_change.index(min(average_change))+1]) + " " + "$" + str(greatest_decrease_in_profit))    
+      
+# # output to a text file
+# file = open("output.txt","w")
+
+# file.write("Financial Analysis" + "\n")
+
+# file.write("
+#                " + "\n")
+
+# file.write("len(total_months)"+ "\n")
+
+# file.write("sum(net_profit_losses)" + "\n")
+
+# file.write("average_change": " + "$" + str(revenue_average) + "\n")
+
+# file.write("Greatest Increase Profit Margin: " + str(months[revenue_change.index(max(revenue_change))+1]) + " " + "$" + str(greatest_increase) + "\n")
+
+# file.write("Greatest Decrease Profit Margin: " + str(months[revenue_change.index(min(revenue_change))+1]) + " " + "$" + str(greatest_decrease) + "\n")
+
+# file.close()

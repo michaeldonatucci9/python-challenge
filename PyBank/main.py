@@ -23,10 +23,11 @@ path = os.path.join("Resources", "budget_data.csv")
 total_months = []
 net_profit_losses = []
 average_change = []
+revenue_change = []
 greatest_increase_in_profit = []
 greatest_decrease_in_profit = []
 
-        
+# open path
 with open(path, "r") as file:
     csv_reader = csv.reader(file)
     # skip header
@@ -43,26 +44,30 @@ with open(path, "r") as file:
 
 # The average of the changes in "Profit/Losses" over the entire period
 # calculate average revenue change
-    for i in range(len(net_profit_losses)-1):
-        average_change.append(int(net_profit_losses[i+1])-int(net_profit_losses[i]))
-    average_change = sum(average_change) / len(average_change)
+for i in range(len(net_profit_losses)-1):
+    average_change.append(int(net_profit_losses[i+1])-int(net_profit_losses[i]))
+    revenue_change = sum(average_change) / len(average_change)
     
-#find the greatest increase and decrease month/yr and $
-greatest_increase_in_profit = max(average_change)
-print(average_change)
-i = average_change.index(greatest_increase)
-month_increase = month[i +1]
+# find the greatest increase and decrease $
+    greatest_increase_in_profit = max(average_change)
+    greatest_decrease_in_profit = min(average_change)
     
-greatest_decrease_in_profit = min(average_change)
-print(average_change)
-d = average_change.index(greatest_decrease)
-month_decrease = month[d+1]
-
 # print the Results
 print("Profit Loss Margin Analysis")
-print("---------------------------------------------------------------------------------------------------")                                   
-print(len(total_months))
-print(sum(net_profit_losses))
-print(average_change)
-print("f Greatest Increase in Profits: {month_increase} {greatest_increase}")
-print("f Greatest Decrease in Profits: {month_decrease} {greatest_decrease}")
+print("---------------------------------")      
+print(f"Total Months:" + str(len(total_months)))
+print(f"Total:"  + "$" + str(sum(net_profit_losses)))
+print(f"Average Change:" + "$" + str(round(revenue_change, 2))) 
+print(f"Greatest Increase in Profits:" + str(total_months[average_change.index(max(average_change))+1]) + " $ " + str(greatest_increase_in_profit))
+print(f"Greatest Decrease in Profits:" + str(total_months[average_change.index(min(average_change))+1]) + " $ " + str(greatest_decrease_in_profit))
+
+#output to text file
+with open(OUT_PATH, "w+") as file:
+    file.write("Profit Loss Margin Analysis")
+    file.write("---------------------------------")      
+    file.write(f"Total Months:" + str(len(total_months)))
+    file.write(f"Total:"  + "$" + str(sum(net_profit_losses)))
+    file.write(f"Average Change:" + "$" + str(round(revenue_change, 2))) 
+    file.write(f"Greatest Increase in Profits:" + str(total_months[average_change.index(max(average_change))+1]) + " $ " + str(greatest_increase_in_profit))
+    file.write(f"Greatest Decrease in Profits:" + str(total_months[average_change.index(min(average_change))+1]) + " $ " + str(greatest_decrease_in_profit))
+file.close

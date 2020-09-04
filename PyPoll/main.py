@@ -13,6 +13,8 @@ khan = []
 correy = []
 li = []
 otooley = []
+decrease_month = []
+increase_month = []
 
 # open reader
 with open(path, "r") as file:
@@ -69,7 +71,7 @@ print(f"OTooley: {otooley_percent}  {otooley_votes}")
 print("----------------------------------------------")
 print(f"Winner: {winner}")
 
-with open(TEXT_FILE, "w+") as file:\n
+with open(OUT_PATH, "w+") as file:
     file.write(f"Election Results")
     file.write("----------------------------------------------")
     file.write(f"Total Votes: {total_votes}")

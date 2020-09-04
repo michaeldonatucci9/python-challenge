@@ -1,4 +1,5 @@
 # import
+import math
 import os
 import csv
 
@@ -44,10 +45,10 @@ with open(path, "r") as file:
 
 # calculation of percentage votes
     total_votes = khan_votes + correy_votes + li_votes + otooley_votes
-    khan_percent = (khan_votes / total_votes) * 100
-    correy_percent = (correy_votes / total_votes) * 100
-    li_percent = (li_votes / total_votes) * 100
-    otooley_percent = (otooley_votes / total_votes) * 100
+    khan_percent = round((khan_votes / total_votes)* 100, 5)
+    correy_percent = round((correy_votes / total_votes)* 100, 5)
+    li_percent = round((li_votes / total_votes) * 100, 5)
+    otooley_percent = round((otooley_votes / total_votes) * 100, 5)
 
 # if else to declare winner    
     if khan_percent > max(correy_percent, li_percent, otooley_percent):
@@ -64,10 +65,10 @@ print(f"Election Results")
 print("----------------------------------------------")
 print(f"Total Votes: ({total_votes})")
 print("----------------------------------------------")      
-print(f"Khan: {khan_percent}  ({khan_votes})")
-print(f"Correy: {correy_percent}  ({correy_votes})")
-print(f"Li: {li_percent}  ({li_votes})")
-print(f"OTooley: {otooley_percent}  ({otooley_votes})")
+print(f"Khan: {khan_percent}%  ({khan_votes})")
+print(f"Correy: {correy_percent}%  ({correy_votes})")
+print(f"Li: {li_percent}%  ({li_votes})")
+print(f"OTooley: {otooley_percent}%  ({otooley_votes})")
 print("----------------------------------------------")
 print(f"Winner: {winner}")
 

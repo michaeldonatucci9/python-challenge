@@ -63,11 +63,11 @@ print(f"Greatest Decrease in Profits:" + str(total_months[average_change.index(m
 
 #output to text file
 with open(OUT_PATH, "w+") as file:
-    file.write("Profit Loss Margin Analysis")
-    file.write("---------------------------------")      
-    file.write(f"Total Months:" + str(len(total_months)))
-    file.write(f"Total:"  + "$" + str(sum(net_profit_losses)))
-    file.write(f"Average Change:" + "$" + str(round(revenue_change, 2))) 
-    file.write(f"Greatest Increase in Profits:" + str(total_months[average_change.index(max(average_change))+1]) + " $ " + str(greatest_increase_in_profit))
-    file.write(f"Greatest Decrease in Profits:" + str(total_months[average_change.index(min(average_change))+1]) + " $ " + str(greatest_decrease_in_profit))
+    file.write("Profit Loss Margin Analysis\n")
+    file.write("---------------------------------\n") 
+    file.write(f"Total Months:" + str(len(total_months)) + "\n")
+    file.write(f"Total:"  + "$" + str(sum(net_profit_losses)) + "\n")
+    file.write(f"Average Change:" + "$" + str(round(revenue_change, 2)) + "\n") 
+    file.write(f"Greatest Increase in Profits:" + str(total_months[average_change.index(max(average_change))+1]) + " $ " + str(greatest_increase_in_profit) + "\n")
+    file.write(f"Greatest Decrease in Profits:" + str(total_months[average_change.index(min(average_change))+1]) + " $ " + str(greatest_decrease_in_profit) + "\n")
 file.close
